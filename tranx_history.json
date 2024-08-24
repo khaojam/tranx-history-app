@@ -1,0 +1,282 @@
+[
+    {
+        "tranx_id": "100001",
+        "tranx_date": "02-01-2022",
+        "tranx_amount": "950.00",
+        "type": "credit",
+        "description": "Monthly salary deposited into savings account"
+    },
+    {
+        "tranx_id": "100002",
+        "tranx_date": "04-01-2022",
+        "tranx_amount": "120.00",
+        "type": "debit",
+        "description": "Grocery shopping at local supermarket"
+    },
+    {
+        "tranx_id": "100003",
+        "tranx_date": "06-01-2022",
+        "tranx_amount": "80.00",
+        "type": "debit",
+        "description": "Dining out at a nearby restaurant"
+    },
+    {
+        "tranx_id": "100004",
+        "tranx_date": "08-01-2022",
+        "tranx_amount": "500.00",
+        "type": "credit",
+        "description": "Freelance work payment for design project"
+    },
+    {
+        "tranx_id": "100005",
+        "tranx_date": "10-01-2022",
+        "tranx_amount": "150.00",
+        "type": "debit",
+        "description": "Utility bills for electricity and water"
+    },
+    {
+        "tranx_id": "100006",
+        "tranx_date": "12-01-2022",
+        "tranx_amount": "100.00",
+        "type": "debit",
+        "description": "Monthly internet subscription payment"
+    },
+    {
+        "tranx_id": "100007",
+        "tranx_date": "14-01-2022",
+        "tranx_amount": "500.00",
+        "type": "credit",
+        "description": "Refund from an online purchase returned"
+    },
+    {
+        "tranx_id": "100008",
+        "tranx_date": "16-01-2022",
+        "tranx_amount": "50.00",
+        "type": "debit",
+        "description": "Movie tickets for weekend cinema visit"
+    },
+    {
+        "tranx_id": "100009",
+        "tranx_date": "18-01-2022",
+        "tranx_amount": "130.00",
+        "type": "debit",
+        "description": "Electronics store purchase new headphones"
+    },
+    {
+        "tranx_id": "100010",
+        "tranx_date": "20-01-2022",
+        "tranx_amount": "700.00",
+        "type": "credit",
+        "description": "Gift money received from family member"
+    },
+    {
+        "tranx_id": "100011",
+        "tranx_date": "22-01-2022",
+        "tranx_amount": "37.00",
+        "type": "debit",
+        "description": "Taxi fare for city commute travel"
+    },
+    {
+        "tranx_id": "100012",
+        "tranx_date": "24-01-2022",
+        "tranx_amount": "28.00",
+        "type": "debit",
+        "description": "Fast food restaurant meal with friends"
+    },
+    {
+        "tranx_id": "100013",
+        "tranx_date": "26-01-2022",
+        "tranx_amount": "90.00",
+        "type": "debit",
+        "description": "Purchase books from local bookstore"
+    },
+    {
+        "tranx_id": "100014",
+        "tranx_date": "28-01-2022",
+        "tranx_amount": "2000.00",
+        "type": "credit",
+        "description": "Annual bonus deposited by employer"
+    },
+    {
+        "tranx_id": "100015",
+        "tranx_date": "30-01-2022",
+        "tranx_amount": "39.00",
+        "type": "debit",
+        "description": "Subscription fee for online streaming service"
+    },
+    {
+        "tranx_id": "100016",
+        "tranx_date": "01-02-2022",
+        "tranx_amount": "95.00",
+        "type": "debit",
+        "description": "Fuel payment at the petrol station"
+    },
+    {
+        "tranx_id": "100017",
+        "tranx_date": "03-02-2022",
+        "tranx_amount": "300.00",
+        "type": "credit",
+        "description": "Payment received for an online course"
+    },
+    {
+        "tranx_id": "100018",
+        "tranx_date": "05-02-2022",
+        "tranx_amount": "55.00",
+        "type": "debit",
+        "description": "Dinner at a local cafe with friends"
+    },
+    {
+        "tranx_id": "100019",
+        "tranx_date": "07-02-2022",
+        "tranx_amount": "110.00",
+        "type": "debit",
+        "description": "Clothing store purchase for new outfits"
+    },
+    {
+        "tranx_id": "100020",
+        "tranx_date": "09-02-2022",
+        "tranx_amount": "600.00",
+        "type": "credit",
+        "description": "Freelance payment for photography gig"
+    },
+    {
+        "tranx_id": "100021",
+        "tranx_date": "11-02-2022",
+        "tranx_amount": "78.00",
+        "type": "debit",
+        "description": "Purchase sports equipment for gym"
+    },
+    {
+        "tranx_id": "100022",
+        "tranx_date": "13-02-2022",
+        "tranx_amount": "25.00",
+        "type": "debit",
+        "description": "Coffee shop payment for morning coffee"
+    },
+    {
+        "tranx_id": "100023",
+        "tranx_date": "15-02-2022",
+        "tranx_amount": "1200.00",
+        "type": "credit",
+        "description": "Investment returns deposited to account"
+    },
+    {
+        "tranx_id": "100024",
+        "tranx_date": "17-02-2022",
+        "tranx_amount": "65.00",
+        "type": "debit",
+        "description": "Grocery shopping at nearby supermarket"
+    },
+    {
+        "tranx_id": "100025",
+        "tranx_date": "19-02-2022",
+        "tranx_amount": "72.00",
+        "type": "debit",
+        "description": "Phone bill payment for monthly subscription"
+    },
+    {
+        "tranx_id": "100026",
+        "tranx_date": "21-02-2022",
+        "tranx_amount": "500.00",
+        "type": "credit",
+        "description": "Payment for freelance graphic design job"
+    },
+    {
+        "tranx_id": "100027",
+        "tranx_date": "23-02-2022",
+        "tranx_amount": "45.00",
+        "type": "debit",
+        "description": "Ride-sharing fare to get to work"
+    },
+    {
+        "tranx_id": "100028",
+        "tranx_date": "25-02-2022",
+        "tranx_amount": "120.00",
+        "type": "debit",
+        "description": "Gift shop purchase for a friend’s present"
+    },
+    {
+        "tranx_id": "100029",
+        "tranx_date": "27-02-2022",
+        "tranx_amount": "800.00",
+        "type": "credit",
+        "description": "Freelance writing job payment received"
+    },
+    {
+        "tranx_id": "100030",
+        "tranx_date": "01-03-2022",
+        "tranx_amount": "66.00",
+        "type": "debit",
+        "description": "Restaurant bill for family dinner"
+    },
+    {
+        "tranx_id": "100031",
+        "tranx_date": "03-03-2022",
+        "tranx_amount": "115.00",
+        "type": "debit",
+        "description": "Sports club membership fee for the month"
+    },
+    {
+        "tranx_id": "100032",
+        "tranx_date": "05-03-2022",
+        "tranx_amount": "550.00",
+        "type": "credit",
+        "description": "Payment for freelance video editing job"
+    },
+    {
+        "tranx_id": "100033",
+        "tranx_date": "07-03-2022",
+        "tranx_amount": "43.00",
+        "type": "debit",
+        "description": "Grocery shopping at a nearby store"
+    },
+    {
+        "tranx_id": "100034",
+        "tranx_date": "09-03-2022",
+        "tranx_amount": "150.00",
+        "type": "debit",
+        "description": "Dining at a fancy restaurant for anniversary"
+    },
+    {
+        "tranx_id": "100035",
+        "tranx_date": "11-03-2022",
+        "tranx_amount": "120.00",
+        "type": "debit",
+        "description": "Home cleaning service payment"
+    },
+    {
+        "tranx_id": "100036",
+        "tranx_date": "13-03-2022",
+        "tranx_amount": "1800.00",
+        "type": "credit",
+        "description": "Annual bonus payment from employment"
+    },
+    {
+        "tranx_id": "100037",
+        "tranx_date": "15-03-2022",
+        "tranx_amount": "250.00",
+        "type": "debit",
+        "description": "Purchase new shoes from a fashion store"
+    },
+    {
+        "tranx_id": "100038",
+        "tranx_date": "17-03-2022",
+        "tranx_amount": "95.00",
+        "type": "debit",
+        "description": "Gadget repair service for smartphone screen"
+    },
+    {
+        "tranx_id": "100039",
+        "tranx_date": "19-03-2022",
+        "tranx_amount": "350.00",
+        "type": "credit",
+        "description": "Freelance translation service payment"
+    },
+    {
+        "tranx_id": "100040",
+        "tranx_date": "21-03-2022",
+        "tranx_amount": "110.00",
+        "type": "debit",
+        "description": "Transportation card top-up for daily commute"
+    }
+]
