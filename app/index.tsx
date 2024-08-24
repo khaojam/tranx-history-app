@@ -1,4 +1,6 @@
 import { Text, View } from "react-native";
+import tranxHistory from '../tranx_history.json';
+import TransactionList from "@/components/TransactionList";
 
 export default function Index() {
   return (
@@ -9,7 +11,13 @@ export default function Index() {
         alignItems: "center",
       }}
     >
-      <Text>Edit app/index.tsx to edit this screen.</Text>
+      <View style={{
+        minWidth: 500,
+        maxWidth: '80%',
+        flex: 2
+      }}>
+        <TransactionList tranxHistory={tranxHistory}></TransactionList>
+      </View>
     </View>
   );
 }
