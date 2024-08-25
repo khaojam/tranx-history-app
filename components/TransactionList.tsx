@@ -31,6 +31,7 @@ const TransactionList = (props: TransactionListProps) => {
 
 const styles = StyleSheet.create({
     transactionList: {
+        paddingVertical: 10,
         width: '100%',
         height: '100%'
     }

@@ -1,7 +1,8 @@
-import { StyleSheet, Text, View } from "react-native";
+import { router } from "expo-router";
+import { Pressable, StyleSheet, Text, View } from "react-native";
 
 type TransactionCardProps = {
-    id?: string;
+    id: string;
     date?: string;
     description?: string;
     amount?: string;
@@ -10,13 +11,15 @@ type TransactionCardProps = {
 
 const TransactionCard = (props: TransactionCardProps) => {
     return (
-        <View style={styles.tranxCard}>
-            <View style={styles.tranxCardHeader}>
-                <Text style={styles.tranxDate}>{props.date}</Text>
-                <Text style={styles.tranxAmt}>RM {props.amount}</Text>
+        <Pressable onPress={() => {router.navigate({ pathname: '/transaction-history/[id]', params: { id: props.id }})}}>
+            <View style={styles.tranxCard}>
+                <View style={styles.tranxCardHeader}>
+                    <Text style={styles.tranxDate}>{props.date}</Text>
+                    <Text style={styles.tranxAmt}>RM {props.amount}</Text>
+                </View>
+                <Text>{props.description}</Text>
             </View>
-            <Text>{props.description}</Text>
-        </View>
+        </Pressable>
     );
 }
 

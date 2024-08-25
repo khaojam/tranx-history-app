@@ -1,23 +1,105 @@
-import { Text, View } from "react-native";
-import tranxHistory from '../tranx_history.json';
-import TransactionList from "@/components/TransactionList";
+import { Alert, Button, Pressable, StyleSheet, Text, TextInput, View } from "react-native";
+import { useBiometricAuthentication } from "@/hooks/useBiometricAuthentication";
+import { useEffect, useState } from "react";
+import { router } from "expo-router";
+import * as Device from 'expo-device';
+import { useAuthentication } from "@/hooks/useAuthentication";
 
 export default function Index() {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const { authenticate, checkBiometricSupport, isBiometricSupported, hasEnrolled } = useBiometricAuthentication();
+  const { login } = useAuthentication();
+
+  useEffect(() => {
+    checkBiometricSupport();
+  }, []);
+
+  const loginOnPress = async () => {
+    const { success } = await login(username, password);
+    if(success) {
+      router.navigate('/transaction-history');
+    } else {
+      Alert.alert('Authentication failed', 'Invalid username or password. Please try again.', [{ text: 'OK' }]);
+    }
+  };
+
+  const handleLoginOnPress = async () => {
+    const deviceType = await Device.getDeviceTypeAsync();
+    
+    if (deviceType === Device.DeviceType.PHONE) {
+      if(isBiometricSupported && !hasEnrolled) {
+        Alert.alert('Warning', 'Biometric authentication is required for login. Please enroll your biometrics in your device settings.', [{ text: 'OK' }]);
+        return;
+      }
+  
+      const result = await authenticate();
+      if(!result.success) {
+        Alert.alert('Authentication failed', 'Could not authenticate. Please try again.', [{ text: 'OK' }]);
+        return;
+      }
+    } 
+    router.navigate('/transaction-history');
+  };
+
   return (
     <View
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-      }}
+      style={styles.container}
     >
-      <View style={{
-        minWidth: 500,
-        maxWidth: '80%',
-        flex: 2
-      }}>
-        <TransactionList tranxHistory={tranxHistory}></TransactionList>
+      <TextInput 
+        style={styles.formInput}
+        placeholder="Username"
+        value={username}
+        onChangeText={setUsername}
+      ></TextInput>
+      <TextInput 
+        style={[styles.formInput, styles.passwordForm]}
+        placeholder="Password"
+        value={password}
+        onChangeText={setPassword}
+      ></TextInput>
+      <View style={styles.actionContainer}>
+        <Button title="Login" onPress={loginOnPress} disabled={(!username || !password)}></Button>
+        { Device.deviceType === Device.DeviceType.DESKTOP || 
+        <Pressable style={[styles.loginButton, {marginTop: 15}]} onPress={handleLoginOnPress}>
+            <Text style={styles.buttonTitle}>Login with biometric</Text>
+        </Pressable> }
       </View>
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  formInput: {
+    borderWidth: 1, 
+    borderStyle: 'solid', 
+    borderColor: 'lightgrey', 
+    borderRadius: 3,
+    width: '80%',
+    height: 35,
+    padding: 5
+  },
+  passwordForm: {
+    marginTop: 8
+  },
+  loginButton: {
+    backgroundColor: 'deepskyblue',
+    borderRadius: 3,
+    paddingVertical: 10,
+    width: '100%'
+  },
+  buttonTitle: {
+    color: 'white', 
+    textAlign: 'center',
+    fontSize: 15
+  },
+  actionContainer: {
+    width: '80%',
+    marginTop: 8
+  }
+});
