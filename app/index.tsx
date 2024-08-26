@@ -8,6 +8,7 @@ import { useAuthentication } from "@/hooks/useAuthentication";
 export default function Index() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [errorMsg, setErrorMsg] = useState<string|undefined>();
   const { authenticate, checkBiometricSupport, isBiometricSupported, hasEnrolled } = useBiometricAuthentication();
   const { login } = useAuthentication();
 
@@ -22,10 +23,12 @@ export default function Index() {
       router.navigate('/transaction-history');
     } else {
       if (deviceType === Device.DeviceType.DESKTOP) {
-        alert('Invalid username or password. Please try again.');
+        setErrorMsg('Invalid username or password');
       } else {
         Alert.alert('Authentication failed', 'Invalid username or password. Please try again.', [{ text: 'OK' }]);
       }
+      setUsername('');
+      setPassword('');
     }
   };
 
@@ -56,17 +59,18 @@ export default function Index() {
           style={styles.formInput}
           placeholder="Username"
           value={username}
-          onChangeText={setUsername}
+          onChangeText={(txt) => {setUsername(txt); setErrorMsg(undefined)}}
           autoCapitalize="none"
         ></TextInput>
         <TextInput 
           style={[styles.formInput, styles.passwordForm]}
           placeholder="Password"
           value={password}
-          onChangeText={setPassword}
+          onChangeText={(txt) => {setPassword(txt); setErrorMsg(undefined)}}
           secureTextEntry={true}
           autoCapitalize="none"
         ></TextInput>
+        {errorMsg && <Text style={styles.errorMsg}>{errorMsg}</Text>}
         <View style={styles.actionContainer}>
           <Button title="Login" onPress={loginOnPress} disabled={(!username || !password)}></Button>
           { Device.deviceType === Device.DeviceType.DESKTOP || 
@@ -118,5 +122,9 @@ const styles = StyleSheet.create({
   actionContainer: {
     width: '100%',
     marginTop: 8
+  },
+  errorMsg: {
+    color: 'red',
+    paddingVertical: 3
   }
 });

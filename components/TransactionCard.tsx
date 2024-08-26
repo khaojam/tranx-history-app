@@ -12,7 +12,7 @@ type TransactionCardProps = {
 
 const TransactionCard = (props: TransactionCardProps) => {
     return (
-        <Pressable onPress={() => {router.navigate({ pathname: '/transaction-history/[id]', params: { id: props.id }})}}>
+        <Pressable testID="tranxCardPressable" onPress={() => {router.navigate({ pathname: '/transaction-history/[id]', params: { id: props.id }})}}>
             <View style={styles.tranxCard}>
                 <Text style={styles.tranxDate}>{props.date}</Text>
                 <Text>{props.description}</Text>
