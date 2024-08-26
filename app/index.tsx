@@ -16,11 +16,16 @@ export default function Index() {
   }, []);
 
   const loginOnPress = async () => {
+    const deviceType = await Device.getDeviceTypeAsync();
     const { success } = await login(username, password);
     if(success) {
       router.navigate('/transaction-history');
     } else {
-      Alert.alert('Authentication failed', 'Invalid username or password. Please try again.', [{ text: 'OK' }]);
+      if (deviceType === Device.DeviceType.DESKTOP) {
+        alert('Invalid username or password. Please try again.');
+      } else {
+        Alert.alert('Authentication failed', 'Invalid username or password. Please try again.', [{ text: 'OK' }]);
+      }
     }
   };
 
