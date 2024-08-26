@@ -2,6 +2,10 @@
 
 This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
 
+## Requirement
+1. Node version - 18.19.0
+2. Cocoapods version - 1.13.0
+
 ## Get started
 
 1. Install dependencies
@@ -13,7 +17,7 @@ This is an [Expo](https://expo.dev) project created with [`create-expo-app`](htt
 2. Start the app
 
    ```bash
-    npx expo start
+    npm run start
    ```
 
 In the output, you'll find options to open the app in a
@@ -34,6 +38,22 @@ npm run reset-project
 ```
 
 This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+
+## To run on Android device
+
+Run
+
+```bash
+npm run android-device
+```
+
+## To run on iOS device
+
+Run
+
+```bash
+npm run ios-device
+```
 
 ## Learn more
 

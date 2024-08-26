@@ -46,24 +46,26 @@ export default function Index() {
     <View
       style={styles.container}
     >
-      <TextInput 
-        style={styles.formInput}
-        placeholder="Username"
-        value={username}
-        onChangeText={setUsername}
-      ></TextInput>
-      <TextInput 
-        style={[styles.formInput, styles.passwordForm]}
-        placeholder="Password"
-        value={password}
-        onChangeText={setPassword}
-      ></TextInput>
-      <View style={styles.actionContainer}>
-        <Button title="Login" onPress={loginOnPress} disabled={(!username || !password)}></Button>
-        { Device.deviceType === Device.DeviceType.DESKTOP || 
-        <Pressable style={[styles.loginButton, {marginTop: 15}]} onPress={handleLoginOnPress}>
-            <Text style={styles.buttonTitle}>Login with biometric</Text>
-        </Pressable> }
+      <View style={styles.loginCard}>
+        <TextInput 
+          style={styles.formInput}
+          placeholder="Username"
+          value={username}
+          onChangeText={setUsername}
+        ></TextInput>
+        <TextInput 
+          style={[styles.formInput, styles.passwordForm]}
+          placeholder="Password"
+          value={password}
+          onChangeText={setPassword}
+        ></TextInput>
+        <View style={styles.actionContainer}>
+          <Button title="Login" onPress={loginOnPress} disabled={(!username || !password)}></Button>
+          { Device.deviceType === Device.DeviceType.DESKTOP || 
+          <Pressable style={[styles.loginButton, {marginTop: 15}]} onPress={handleLoginOnPress}>
+              <Text style={styles.buttonTitle}>Login with biometric</Text>
+          </Pressable> }
+        </View>
       </View>
     </View>
   );
@@ -74,13 +76,20 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
+    backgroundColor: 'lightgrey'
+  },
+  loginCard: {
+    backgroundColor: 'white',
+    borderRadius: 5,
+    width: '70%',
+    padding: 10
   },
   formInput: {
     borderWidth: 1, 
     borderStyle: 'solid', 
     borderColor: 'lightgrey', 
     borderRadius: 3,
-    width: '80%',
+    width: '100%',
     height: 35,
     padding: 5
   },
@@ -99,7 +108,7 @@ const styles = StyleSheet.create({
     fontSize: 15
   },
   actionContainer: {
-    width: '80%',
+    width: '100%',
     marginTop: 8
   }
 });

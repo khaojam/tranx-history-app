@@ -20,6 +20,7 @@ const TransactionDetails = () => {
                 <>
                     <TransactionField field="Transaction id" value={transaction!.tranx_id}></TransactionField>
                     <TransactionField field="Date" value={transaction!.tranx_date}></TransactionField>
+                    <TransactionField field="Type" value={transaction!.type}></TransactionField>
                     <TransactionField field="Amount" value={'RM ' + transaction!.tranx_amount}></TransactionField>
                     <TransactionField field="Description" value={transaction!.description}></TransactionField>
                 </>
