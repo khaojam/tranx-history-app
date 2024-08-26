@@ -3,11 +3,11 @@ import { useBiometricAuthentication } from "@/hooks/useBiometricAuthentication";
 import { useFetchData } from "@/hooks/useFetchData";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { useCallback, useEffect, useState } from "react";
-import { ActivityIndicator, FlatList, RefreshControl, StyleSheet, View, Text, Pressable } from "react-native"
+import { ActivityIndicator, FlatList, RefreshControl, StyleSheet, View, Text, Pressable, Alert } from "react-native"
 
 const TransactionHistory = () => {
     const { transactions, isLoading, getTranxHistory } = useFetchData();
-    const { authenticate, checkBiometricSupport, isBiometricSupported } = useBiometricAuthentication();
+    const { authenticate, checkBiometricSupport, isBiometricSupported, hasEnrolled } = useBiometricAuthentication();
     const [showAmount, setShowAmount] = useState(false);
     const [refreshing, setRefreshing] = useState(false);
 
@@ -34,10 +34,17 @@ const TransactionHistory = () => {
             const result = await authenticate();
             if(result.success) {
                 setShowAmount(true);
-                return;
+            } else {
+                Alert.alert(
+                    hasEnrolled ? 'Authentication failed' : 'Warning', 
+                    hasEnrolled ? 'Could not authenticate. Please try again.' : 
+                    'Biometric authentication is required for login. Please enroll your biometrics in your device settings.', 
+                    [{ text: 'OK' }]
+                );
             }
+            return;
         }
-        setShowAmount(!showAmount);
+        setShowAmount(!showAmount);   
     };
 
     return (

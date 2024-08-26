@@ -52,12 +52,15 @@ export default function Index() {
           placeholder="Username"
           value={username}
           onChangeText={setUsername}
+          autoCapitalize="none"
         ></TextInput>
         <TextInput 
           style={[styles.formInput, styles.passwordForm]}
           placeholder="Password"
           value={password}
           onChangeText={setPassword}
+          secureTextEntry={true}
+          autoCapitalize="none"
         ></TextInput>
         <View style={styles.actionContainer}>
           <Button title="Login" onPress={loginOnPress} disabled={(!username || !password)}></Button>

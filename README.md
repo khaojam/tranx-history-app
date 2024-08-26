@@ -14,11 +14,13 @@ This is an [Expo](https://expo.dev) project created with [`create-expo-app`](htt
    npm install
    ```
 
-2. Start the app
+2. Start the app on web
 
    ```bash
     npm run start
    ```
+
+3. Load localhost:8081 in browser.
 
 In the output, you'll find options to open the app in a
 
@@ -29,30 +31,38 @@ In the output, you'll find options to open the app in a
 
 You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
 
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
 ## To run on Android device
 
-Run
+> Make sure ANDROID_HOME is set in your machine or create local.properties in android root directory.
 
-```bash
-npm run android-device
+Example:
+
+```
+//local.properties
+
+sdk.dir=<path_to_android_sdk>
 ```
 
-## To run on iOS device
+Run
+
+```bash
+// device
+npm run android-device
+
+// emulator
+npm run android
+```
+
+## Run on iOS
 
 Run
 
 ```bash
+// device
 npm run ios-device
+
+// simulator
+npm run ios
 ```
 
 ## Learn more

@@ -1,6 +1,6 @@
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { router, Stack } from "expo-router";
-import { Button, Pressable } from "react-native";
+import { Pressable } from "react-native";
 
 export default function TransactionHistoryLayout() {
   return (
